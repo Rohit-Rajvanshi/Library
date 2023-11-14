@@ -18,7 +18,10 @@
     position: relative;
     top: 16px;
     margin-right: 20px;
+    transition: transform 0.5s ease;
 }
+
+
 
 .add-button{
     margin-top: 30px;
@@ -90,10 +93,6 @@ dialog::backdrop {
     transition: transform 0.5s ease;
 }
 
-.form input[type="text"]:hover,
-.form input[type="number"]:hover{
-    transform: scale(1.1,1.1);
-}
 
 .form h1{
     font-size: xx-large;
@@ -159,5 +158,58 @@ input::placeholder{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    
+    gap: 30px;
+    margin: 30px;
+    
+}
+
+.book-tile{
+    
+    height: 300px;
+    background-color: #2e1065;
+    border: 1px solid #2e1065;
+    border-radius: 12px;
+    color: white;
+    transition: transform 0.5s ease;
+    padding: 16px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.book-tile:hover{
+    transform: scale(1.1,1.1);
+}
+
+.book-tile h1{
+    margin-bottom: 20px;
+}
+
+.book-tile h2{
+    margin-bottom: 20px;
+}
+
+.book-tile button{
+    background-color: #2e1065;
+    border: 1px solid white;
+    color: white;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 20px;
+    width: 120px;
+    transition: transform 0.5s ease;
+    margin-bottom: 20px;
+}
+
+.book-tile button:hover{
+    transform: scale(1.1,1.1);
 }
 

@@ -30,16 +30,16 @@
         <dialog id="book-dialog">
             <form action="" class="form" autocomplete="off">
                 <h1>Book Info:</h1>
-                <input type="text" id="name" placeholder="Title">
-                <input type="text" id="author" placeholder="Author">
-                <input type="number" id="pages" placeholder="Pages" min="50">
+                <input type="text" id="name" placeholder="Title" class="f-text" required>
+                <input type="text" id="author" placeholder="Author" class="f-author" required>
+                <input type="number" id="pages" placeholder="Pages" min="50" class="f-page" required>
                 <div class="f-checkbox">
-                <input type="checkbox" id="checkbox">
+                <input type="checkbox" id="checkbox" value="Completed" > 
                 <label for="checkbox">Completed Reading?</label>
                 </div>
                 <div class="f-button">
-                    <button value="cancel" formmethod="dialog">Cancel</button>
-                    <button id="confirmBtn" value="default">Confirm</button>
+                    <button id="confirmBtn" value="default" formmethod="dialog">Confirm</button>
+                    <button value="cancel"  class="cancel-Btn">Cancel</button>
                 </div>
             </form>
         </dialog>
