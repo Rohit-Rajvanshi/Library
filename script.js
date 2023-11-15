@@ -16,7 +16,7 @@ cancelBtn.addEventListener("click",(event)=>{
 })
 
 
-const myLibrary = [];
+let myLibrary = [];
 
 
 function Book(title,author,pages,status) {
@@ -24,7 +24,13 @@ function Book(title,author,pages,status) {
     this.author="~~"+author+"~~";
     this.pages=pages+"pages";
     this.status=status;
+    this.remove= function removeBook(){
+        myLibrary = myLibrary.filter(item => item!==this)
+    }
 }
+
+
+
 
 function addBookToLibrary() {  
     confirmBtn.addEventListener("click", () => {
@@ -72,6 +78,24 @@ function addBookToLibrary() {
         bookTile.appendChild(statusElement);
         bookTile.appendChild(removeElement);
 
+        
+        
+        removeElement.addEventListener("click", () => { 
+            myLibrary[myLibrary.length - 1].remove();
+            bookTile.remove();
+        });   
+
+
+        statusElement.addEventListener("click",()=>{
+            if(statusElement.textContent==="Completed"){
+                statusElement.textContent="Pending"
+            }
+            else if(statusElement.textContent==="Pending"){
+                statusElement.textContent="Completed"
+            }
+        })
+            
+
         bookDialog.close();
         }
     });
@@ -80,6 +104,8 @@ function addBookToLibrary() {
 showDialog.addEventListener("click",()=>{
     document.querySelector(".form").reset()
 })
+
+
 
 
 addBookToLibrary();
